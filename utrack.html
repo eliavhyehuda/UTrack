@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>UTrack!</title>
+    <link rel="stylesheet" href="css/ext/bootstrap.css"/>
+    <link rel="stylesheet" href="css/utrack.css"/>
+</head>
+<body>
+
+<div id="app_container" class="container">
+
+    <div id="first_display"class="jumbotron">
+        <h1>Welcome To UTrack!</h1>
+        <p>Track and analyze data that matters to you! </p>
+        <button id="make_ui_button" class="btn btn-success btn-lg">Start App</button>
+    </div>
+    
+    <!-- <div id="input_div">
+         Put HTML here to support user input of data
+    </div> -->
+    <div id="index_app" class="input_class">
+
+        <template id="switch_buttons_template" class=>
+            <!--
+            <button id="input_view_button">Input</button>
+            <button id="analysis_view_button">Analysis</button>
+            -->
+
+            <div class="navbar  navbar-inverse navbar-fixed-top">
+              <div class="container">
+                <a id="full_name" class="navbar-brand" href="#">Eliav Yehuda</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target  =".navbar-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a id="input_view_button">Input</a></li>
+                    <li><a id="analysis_view_button">Analysis</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
+        </template>
+
+
+        <template id="input_template">
+            
+            <div class="row">
+                <div class="input-group col-sm-4 col-sm-offset-2">
+                    <span class="input-group-addon" id="basic-addon1">Activity</span>
+                    <!--
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    -->
+                    <select id="activity_options" class="form-control">
+                        <option value="Writing Code">Writing Code</option>
+                        <option value="Eating Dinner">Eating Dinner</option>
+                        <option value="Playing Sports">Playing Sports</option>
+                        <option value="Studying for exams">Studying for exams</option>
+                        <option value="Attending Lectures">Attending Lectures</option>
+                        <option value="Watching TV">Watching TV</option>
+                    </select>                 
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group col-sm-4 col-sm-offset-2">
+                    <span class="input-group-addon" id="basic-addon1">Energy Level</span>
+                    <!--
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    -->
+                    <select id="energy_options" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-group col-sm-4 col-sm-offset-2">
+                    <span class="input-group-addon" id="basic-addon1">Stress Level</span>
+                    <!--
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    -->
+                    <select id="stress_options" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-group col-sm-4 col-sm-offset-2">
+                    <span class="input-group-addon" id="basic-addon1">Happiness Level</span>
+                    <!--
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    -->
+                    <select id="happiness_options" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-group col-sm-4 col-sm-offset-2">
+                    <span class="input-group-addon" id="basic-addon1">Time Spent</span>
+                    <input id="time" type="number" class="form-control" aria-describedby="basic-addon1" value="0">
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <p id="date"></p>
+                </div>
+
+                <div class="col-sm-2 col-sm-offset-3">
+                    <p class="btn-group ">
+                        <a  id="submit_button" class="btn btn-success btn-lg">Submit</a>
+                    </p>
+                </div>
+            </div>
+
+            
+            
+
+            <!--
+            Activity:
+            <select id="activity_options">
+                <option value="activity1">Activity 1</option>
+                <option value="activity2">Activity 2</option>
+                <option value="activity3">Activity 3</option>
+                <option value="activity4">Activity 4</option>
+                <option value="activity5">Activity 5</option>
+            </select>
+            <br>
+
+            Energy Level:
+            <select id="energy_options">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+
+            Stress Level:
+            <select id="stress_options">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+
+            Happiness Level:
+            <select id="happiness_options">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            
+            Time Spent: <input type="number" id="time" value="0">
+            -->
+        </template>
+        
+        <template id="analysis_template">
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-10">
+                    <p class="btn-group ">
+                        <a  id="table_view_button" class="btn btn-primary btn-lg">Table</a>
+                        <a  id="graph_view_button" class="btn btn-danger btn-lg">Graph</a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="table_summary_view">
+                <div class="page-header">
+                    <h1>Table Summary:</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-1">
+                      <table class="table" id="activity_table">
+                        <thead>
+                          <tr>
+                            <th>Activity</th>
+                            <th>Time</th>
+                            <th>Energy</th>
+                            <th>Stress</th>
+                            <th>Happiness</th>
+                          </tr>
+                        </thead>
+                        <tbody id="activity_table_body">
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="graph_summary_view">
+                <div class="page-header">
+                    <h1>Graph Summary:</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <p class="btn-group ">
+                            <a  id="health_graph_view_button" class="btn btn-primary btn-lg">Health Graph</a>
+                            <a  id="time_graph_view_button" class="btn btn-danger btn-lg">Time Graph</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <canvas id="canvas_demo" width="850" height="600">
+                            If you don't have an HTML5-compatible browser, you'll see this text.
+
+                            This canvas object can be removed after you understand canvas basics.
+                        </canvas>
+                    </div>
+                </div>
+                <!--
+                <button id="run_canvas_demo_button" class="btn btn-primary">Run Canvas Demo</button>
+                -->
+
+
+            </div>
+
+        </template>
+        
+    </div>
+
+
+
+
+    <!--
+    <div id="analysis_div">
+         Put HTML here to support users in analyzing their data
+
+        <div>
+            <canvas id="canvas_demo">
+                If you don't have an HTML5-compatible browser, you'll see this text.
+
+                This canvas object can be removed after you understand canvas basics.
+            </canvas>
+        </div>
+        <button id="run_canvas_demo_button" class="btn btn-primary">Run Canvas Demo</button>
+    </div>
+    -->
+    <!--
+    <button id="make_ui_button" Style="margin-top: 20px;">
+        Start App
+    </button>
+    -->
+
+    <div id="unit_tests">
+        <!-- Keep this here so TAs can run your unit tests -->
+        <a href="unit_tests.html">Run Unit Tests</a>
+    </div>
+
+</div>
+
+<script src="js/ext/underscore.js"></script>
+<script src="js/model.js"></script>
+<script src="js/view.js"></script>
+<script src="js/utrack.js"></script>
+</body>
+</html>
